@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ImpoliteCorrect</title>
+    <script type="text/javascript" src="roslib.js"></script>    
+    <script type="text/javascript" src="politeJS.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        body{background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+            height: 100vh;
+            background-size: cover;
+            background-position: center;}
+    </style>
+
+</head>
+<body onload="impo()">
+<div id="container">
+    <div id="textForUser"></div>
+
+    <div id="camera">
+        <iframe class="cam_canvas" src="http://10.42.0.1:8000/index.html" title="waffle camera"></iframe>
+	<button id="leftBtn" onclick="turnLeft()"><span>&#8592;</span> </button>
+        <button id="stopBtn" onclick="stop()">עצור</button>
+        <button id="rightBtn" onclick="turnRight()"> <span>&#8594;</span> </button>
+      </div>
+
+    <div id="right_side">
+	<div id="next"></div>
+        <!--<div id="button">
+            <a href="#" id="btn1" >ס</a>
+            <a href="#" id="btn2" >י</a>
+            <a href="#" id="btn3" >ו</a>
+            <a href="#" id="btn4" >ם</a>
+        </div>
+        <button id="nextRoom">המשך לחדר הבא</button>-->
+        <button id="submit" onclick="checkPC(4)">בדיקה</button>
+	<div id="instracImpo"></div>
+        <div id="gameImpolite">
+		<input id="firstNum">
+		<input id="secondNum">
+		<input id="thirdNum">
+	</div>
+     </div>
+</div>
+
+</body>
+</html>

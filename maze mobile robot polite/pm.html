@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PoliteCorrect</title>
+    <script type="text/javascript" src="roslib.js"></script>    
+    <script type="text/javascript" src="politeJS.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        body{background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+        height: 100vh;
+        background-size: cover;
+        background-position: center;}
+    </style>
+
+</head>
+<body onload="sampleFunction()">
+    <div id="container">
+        <div id="textForUser"></div>
+
+        <div id="camera">
+            <iframe class="cam_canvas" src="http://10.42.0.1:8000/index.html" title="waffle camera"></iframe>
+	    <button id="leftBtn" onclick="turnLeft()"><span>&#8592;</span> </button>
+            <button id="stopBtn" onclick="stop()">עצור</button>
+            <button id="rightBtn" onclick="turnRight()"> <span>&#8594;</span> </button>
+        </div>
+
+        <div id="right_side">
+            <div id="next"></div>
+            <button id="submitNext" onclick="clickNext()">המשך</button>
+
+            <div id="button">
+                <a href="#" id="btn11" onclick="removeBtn14()">חדר כחול</a>
+                <a href="#" id="btn12" onclick="removeBtn11(0)">חדר אדום</a>
+                <a href="#" id="btn14" onclick="removeBtn12(1)">חדר ירוק</a>
+            </div>
+            <button id="submitp" onclick="checkPC(2)">בדיקה</button>
+	    <div id="instrac"></div>
+            <div id="game">
+                <input id="firstNum">
+                <input id="secondNum">
+                <input id="thirdNum">
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+</html>

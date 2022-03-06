@@ -1,0 +1,144 @@
+function impo(){
+    document.getElementById('submit').style.display = "none";
+
+    //document.getElementById('btn1').style.display = "none";
+   // document.getElementById('btn2').style.display = "none";
+   // document.getElementById('btn3').style.display = "none";
+    //document.getElementById('btn4').style.display = "none";
+
+    document.getElementById("leftBtn").disabled = true;
+    document.getElementById("stopBtn").disabled = true;
+    document.getElementById("rightBtn").disabled = true;
+
+    //document.getElementById('button').style.display = "none";
+
+    var randNum = Math.random();
+    if(randNum<=0.25){
+        goToBlue(0);
+        document.getElementById('nextRoom').addEventListener("click", () => {
+           // document.getElementById('btn1').style.display = "block";
+           // document.getElementById('button').style.display = "none";
+            goToGreen(0);
+            document.getElementById('nextRoom').addEventListener("click", () => {
+              //  document.getElementById('btn4').style.display = "block";
+               // document.getElementById('button').style.display = "none";
+                goToYellow(0);
+                document.getElementById('nextRoom').addEventListener("click", () => {
+                  //  document.getElementById('btn3').style.display = "block";
+                   // document.getElementById('button').style.display = "none";
+                    goToRed(0);
+                    goal_status_listener.subscribe(function (message){
+                        //console.log(message.pose.pose.position.x);
+                        var Rposex = message.pose.pose.position.x;
+                        document.getElementById('submit').style.display = "block";
+                        document.getElementById('nextRoom').style.display = "none";
+                        if (Rposex>=(Xred-0.15) && Rposex<=(Xred+0.15)){
+                          //  document.getElementById('btn2').style.display = "block";
+                          //  document.getElementById('button').style.display = "none";
+                            document.getElementById('submit').addEventListener("click", () => {
+                                checkPC(4);
+                            });
+                        }
+                    });
+                });
+            });
+        });
+    }
+    if(randNum>0.25 && randNum<=0.5){
+        goToRed(0);
+        document.getElementById('nextRoom').addEventListener("click", () => {
+            //document.getElementById('btn2').style.display = "block";
+           // document.getElementById('button').style.display = "none";
+            goToYellow(0);
+            document.getElementById('nextRoom').addEventListener("click", () => {
+               // document.getElementById('btn3').style.display = "block";
+              //  document.getElementById('button').style.display = "none";
+                goToGreen(0);
+                document.getElementById('nextRoom').addEventListener("click", () => {
+                    //document.getElementById('btn4').style.display = "block";
+                    goToBlue(0);
+                  //  document.getElementById('button').style.display = "none";
+                    goal_status_listener.subscribe(function (message){
+                        //console.log(message.pose.pose.position.x);
+                        var Rposex = message.pose.pose.position.x;
+                        document.getElementById('submit').style.display = "block";
+                        document.getElementById('nextRoom').style.display = "none";
+                        if (Rposex>=(Xblue-0.15) && Rposex<=(Xblue+0.15)){
+                            //document.getElementById('btn1').style.display = "block";
+                        //    document.getElementById('button').style.display = "none";
+                            document.getElementById('submit').addEventListener("click", () => {
+                                //need to think of sol/.
+                                checkPC(4);
+                            });
+                        }
+                    });
+                });
+            });
+        });
+    }
+    if(randNum>0.5 && randNum<=0.75){
+        goToYellow(0);
+        document.getElementById('nextRoom').addEventListener("click", () => {
+           // document.getElementById('btn3').style.display = "block";
+           // document.getElementById('button').style.display = "none";
+            goToBlue(0);
+            document.getElementById('nextRoom').addEventListener("click", () => {
+               // document.getElementById('btn1').style.display = "block";
+               // document.getElementById('button').style.display = "none";
+                goToGreen(0);
+                document.getElementById('nextRoom').addEventListener("click", () => {
+                   // document.getElementById('btn4').style.display = "block";
+                  //  document.getElementById('button').style.display = "none";
+                    goToRed(0);
+                    goal_status_listener.subscribe(function (message){
+                        //console.log(message.pose.pose.position.x);
+                        var Rposex = message.pose.pose.position.x;
+                        document.getElementById('submit').style.display = "block";
+                        document.getElementById('nextRoom').style.display = "none";
+                        if (Rposex>=(Xred-0.15) && Rposex<=(Xred+0.15)){
+                          //  document.getElementById('btn2').style.display = "block";
+                           // document.getElementById('button').style.display = "none";
+                            document.getElementById('submit').addEventListener("click", () => {
+                                //need to think of sol/.
+                                checkPC(4);
+                            });
+                        }
+                    });
+                });
+            });
+        });
+    }
+    if(randNum>0.75){
+        goToGreen(0);
+        document.getElementById('nextRoom').addEventListener("click", () => {
+          //  document.getElementById('btn4').style.display = "block";
+          //  document.getElementById('button').style.display = "none";
+            goToRed(0);
+            document.getElementById('nextRoom').addEventListener("click", () => {
+              //  document.getElementById('btn2').style.display = "block";
+             //   document.getElementById('button').style.display = "none";
+                goToBlue(0);
+                document.getElementById('nextRoom').addEventListener("click", () => {
+                  //  document.getElementById('btn1').style.display = "block";
+                  //  document.getElementById('button').style.display = "none";
+                    goToYellow(0);
+                    goal_status_listener.subscribe(function (message){
+                        //console.log(message.pose.pose.position.x);
+                        var Rposex = message.pose.pose.position.x;
+                        document.getElementById('submit').style.display = "block";
+                        document.getElementById('nextRoom').style.display = "none";
+                        if (Rposex>=(Xyellow-0.15) && Rposex<=(Xyellow+0.15)){
+                         //   document.getElementById('btn3').style.display = "block";
+                            document.getElementById('submit').addEventListener("click", () => {
+                                //need to think of sol/.
+                                checkPC(4);
+                            });
+                        }
+                    });
+                });
+            });
+        });
+    }
+
+}
+
